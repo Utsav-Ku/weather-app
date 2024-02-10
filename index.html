@@ -9,8 +9,8 @@
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="enter city name" spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <input type="text" id="city" placeholder="enter city name" spellcheck="false">
+            <button id="mybtn"><img src="images/search.png"></button>
         </div>
         <div class="error">
             <p>Invalid city name</p>
@@ -86,6 +86,15 @@
         searchBtn.addEventListener("click", ()=>{
             checkWeather(searchBox.value);
         })
+
+        var input = document.getElementById("city");
+
+        input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("mybtn").click();
+        }
+        });
        
     </script>
 </body>
